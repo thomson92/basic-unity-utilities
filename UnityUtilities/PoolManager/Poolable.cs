@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 
 namespace UnityUtilities.PoolManager {
-    public abstract class BasePoolable : MonoBehaviour {
-        private IBasePool PoolRef { get; set; }
 
-        public void SetPoolRef(IBasePool poolRef) {
-            PoolRef = poolRef;
+    public interface IPoolable {
+        public void OnAddToPool();
+        public string GetPoolKey();
+    }
+
+    public abstract class BasePoolable : MonoBehaviour, IPoolable {
+
+        [SerializeField] protected string PoolableKey;
+
+        public string GetPoolKey() {
+            return PoolableKey;
+        }
+
+        public virtual void OnAddToPool() {
+            gameObject.SetActive(false);
         }
 
         protected virtual void ReturnToPool() {
-            PoolRef.ReturnObjectToPool(this);
+            ObjectPooler.Instance.ReturnObjectToPool(PoolableKey, this);
         }
     }
 }
