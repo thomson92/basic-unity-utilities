@@ -32,6 +32,8 @@ Depending on your needs you can use also *BehaviourSubject* which is other type 
 
 # Pool system
 
+Example implementation:
+
 ```cs
 public class BowExampleClass : MonoBehaviour { 
     [SerializedField] private ExampleArrow _myArrowPrefab;
@@ -72,6 +74,9 @@ public class ExampleArrow : BasePoolable {
 
 # UnityEngine.dll reference
 Project requires reference to *UnityEngine.dll*. To add the reference just right click on project > add > Reference...
+
 ![Add ref 1](https://i.imgur.com/NxHPJ3K.png)
+
 Then from Reference Manager view click **Browse** and find UnityEngine.dll file. File should be locate in *C:\YOURPROGRAMSFOLDER\Unity\Editor\Data\Managed*.
+
 ![Add ref 2](https://i.imgur.com/HHcHJz2.png)
