@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
-namespace UnityUtilities.ListUtils {
-   public static class ListExtensions {
+namespace UnityUtilities.ListUtils
+{
+
+    public static class ListExtensions {
         public static T GetAndRemoveLastListEl<T>(this List<T> collection) {
 
             int lastIndex = collection.Count - 1;
