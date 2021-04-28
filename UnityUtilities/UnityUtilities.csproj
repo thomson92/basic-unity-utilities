@@ -10,4 +10,8 @@
     </Reference>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;C:\Users\Public\Documents\Unity Projects\U.miniWarrior\Assets\Plugins\&quot;" />
+  </Target>
+
 </Project>
